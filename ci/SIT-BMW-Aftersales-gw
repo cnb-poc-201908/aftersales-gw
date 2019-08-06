@@ -39,6 +39,7 @@ def customImage
     }
 
     //################# CD PART ###################################
+	   
        stage("Build image and Deploy to Env "){
        docker.withRegistry(DOCKER_REG,DOCKER_REG_KEY){
               customImage = docker.build(DOCKER_REPO + "/" + IMAGE_NAME)    
