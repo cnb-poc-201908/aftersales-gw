@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: uat-bmw-aftersales-gw
+  namespace: uat
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: uat-bmw-aftersales-gw
+    spec:
+      containers:
+        - name: uat-bmw-aftersales-gw
+          image: registry.cn-beijing.aliyuncs.com/bmwpoc/uat-bmw-aftersales-gw:{version}
+          ports:
+            - name: http-port
+              containerPort: 9001
+          env:
+            - name: spring_profiles_active
+              value: k8s
+      imagePullSecrets:
+        - name: bmwpoc
