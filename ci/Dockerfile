@@ -5,7 +5,7 @@ FROM registry.cn-beijing.aliyuncs.com/bmwpoc/jdk8
 ENV TZ Asia/Shanghai
 
 # The application's jar file
-ARG JAR_FILE=target/aftersales-gw-0.0.1-SNAPSHOT.jar.jar
+ARG JAR_FILE=target/aftersales-gw-0.0.1-SNAPSHOT.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} app.jar
