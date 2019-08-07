@@ -121,7 +121,7 @@ zuul:
 
   routes: 
     bmw-reservation-service:
-        path: /reservation/**
+        path: /repairOrder/**
         serviceId: dashboard-reservation
         stripPrefix: false
         sensitiveHeaders:
