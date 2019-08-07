@@ -53,10 +53,15 @@ zuul:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
 
-  routes:        
-    bmw-repairOrder-service:
+  routes: 
+    bmw-reservation-service:
         path: /repairOrder/**
         serviceId: dashboard-reservation
+        stripPrefix: false
+        sensitiveHeaders:
+    bmw-main-service:
+        path: /main/**
+        serviceId: dashboard-main
         stripPrefix: false
         sensitiveHeaders:
 
@@ -114,9 +119,14 @@ zuul:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
 
-  routes:      
-    bmw-repairOrder-service:
-        path: /repairOrder/**
+  routes: 
+    bmw-reservation-service:
+        path: /reservation/**
         serviceId: dashboard-reservation
+        stripPrefix: false
+        sensitiveHeaders:
+    bmw-main-service:
+        path: /main/**
+        serviceId: dashboard-main
         stripPrefix: false
         sensitiveHeaders:
